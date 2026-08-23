@@ -1,20 +1,51 @@
-import annamariaPhoto from "../../assets/images/annamaria-plantamura.jpg";
-import backgroundPhoto from "../../assets/images/background.jpeg";
-import ernestoPhoto from "../../assets/images/ernesto-losavio.jpeg";
-import gabriellaPhoto from "../../assets/images/gabriella-perniola.jpg";
-import gianvitoPhoto from "../../assets/images/gianvito-difilippo.jpeg";
-import vitoPhoto from "../../assets/images/vito-nicola-paradiso.jpg";
+const photoModules = import.meta.glob<string>("../../assets/gallery/*.{jpg,jpeg}", {
+  eager: true,
+  import: "default",
+  query: "?url",
+});
 
-export const galleryPhotos: GalleryPhoto[] = [
-  { src: backgroundPhoto, alt: "Il PGQ in concerto, luci di scena" },
-  { src: vitoPhoto, alt: "Vito Nicola Paradiso alla chitarra" },
-  { src: annamariaPhoto, alt: "Annamaria Plantamura alla chitarra" },
-  { src: gianvitoPhoto, alt: "Gianvito Difilippo alla chitarra" },
-  { src: gabriellaPhoto, alt: "Gabriella Perniola alla chitarra" },
-  { src: ernestoPhoto, alt: "Ernesto Losavio al contrabbasso" },
+const groups: PhotoGroup[] = [
+  { prefix: "170725-", alt: "Il PGQ in concerto, luglio 2025" },
+  { prefix: "sdm-2024-", alt: "Il PGQ in concerto, 2024" },
+  { prefix: "studio-", alt: "Il PGQ in studio di registrazione" },
 ];
+
+export const galleryPhotos: GalleryPhoto[] = Object.keys(photoModules)
+  .map((path) => {
+    const fileName = path.slice(path.lastIndexOf("/") + 1);
+    return { fileName, src: photoModules[path], alt: getAlt(fileName), groupOrder: getGroupOrder(fileName) };
+  })
+  .sort((a, b) => a.groupOrder - b.groupOrder || a.fileName.localeCompare(b.fileName))
+  .map(({ src, alt }) => ({ src, alt }));
+
+function getGroup(fileName: string): PhotoGroup | undefined {
+  return groups.find(({ prefix }) => fileName.startsWith(prefix));
+}
+
+function getGroupOrder(fileName: string): number {
+  const group = getGroup(fileName);
+
+  if (!group)
+    return groups.length;
+
+  return groups.indexOf(group);
+}
+
+function getAlt(fileName: string): string {
+  const group = getGroup(fileName);
+
+  if (!group)
+    return "Il PGQ";
+
+  return group.alt;
+}
 
 export type GalleryPhoto = {
   src: string;
+  alt: string;
+};
+
+type PhotoGroup = {
+  prefix: string;
   alt: string;
 };

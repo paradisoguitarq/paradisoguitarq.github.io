@@ -6,11 +6,11 @@ export const album: Album = {
   subtitle: "Travel Notes",
   meta: "10 brani · 41'32\"",
   totalDuration: "41'32\"",
-  recordedNote: "Registrato nell'aprile 2025 per Soundset Recordings. Copertina di Simone Di Prato.",
-  performersNote:
-    "Con Vito Nicola Paradiso, Annamaria Plantamura, Gianvito Difilippo e Gabriella Perniola alle chitarre, ed Ernesto Losavio al contrabbasso.",
+  recordedNote: "Registrato nell'aprile 2025 per Soundset Recordings.\nCopertina di Simone Di Prato.",
+  intro:
+    "Il disco conduce il pubblico in un meraviglioso viaggio musicale, tra suoni e atmosfere ispirati a luoghi e situazioni che il compositore Vito Nicola Paradiso ha fissato sulla carta, come vere e proprie note di viaggio o quadri musicali.",
   description:
-    "Il disco apre con un trittico dedicato al volo su Los Angeles, a una strada nel deserto dell'Arizona e a un treno lungo la costa della California, per poi attraversare Las Vegas, Riverside e temi di attualità come la migrazione.",
+    "Il disco conduce il pubblico in un meraviglioso viaggio musicale, tra suoni e atmosfere ispirati a luoghi e situazioni che il compositore Vito Nicola Paradiso ha fissato sulla carta, come vere e proprie note di viaggio o quadri musicali.",
   spotifyHref: "https://open.spotify.com/intl-it/artist/0tAeeBpXD7IaQ8zvSYHwii",
 };
 
@@ -66,7 +66,7 @@ export type Album = {
   meta: string;
   totalDuration: string;
   recordedNote: string;
-  performersNote: string;
+  intro: string;
   description: string;
   spotifyHref: string;
 };

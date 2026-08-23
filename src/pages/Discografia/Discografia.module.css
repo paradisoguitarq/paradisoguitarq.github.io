@@ -9,6 +9,12 @@
   padding: 0 var(--gutter);
 }
 
+.intro {
+  margin-top: var(--space-5);
+  max-width: var(--measure-prose);
+  color: var(--text-muted);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -21,16 +27,22 @@
   margin-top: var(--space-5);
 }
 
+.suite-group + .suite-group {
+  margin-top: var(--space-7);
+}
+
+/* The total-duration rule below closes the list, so the final track's own
+   border would just double it. */
+.tracklist > .suite-group:last-child > :last-child {
+  border-bottom: none;
+}
+
 .suite-heading {
   font-family: var(--font-display);
   font-style: italic;
   color: var(--wood-600);
   font-size: var(--fs-h4);
-  margin: var(--space-6) 0 var(--space-3);
-}
-
-.suite-heading:first-child {
-  margin-top: 0;
+  margin: 0 0 var(--space-2);
 }
 
 .total-duration {

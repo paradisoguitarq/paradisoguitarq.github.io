@@ -10,7 +10,8 @@ export default function Discografia() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <SectionHeading eyebrow="Discografia" title={`${album.title}: ${album.subtitle}`} lead={`${album.recordedNote} ${album.performersNote}`} />
+        <SectionHeading eyebrow="Discografia" title={`${album.title}: ${album.subtitle}`} lead={album.recordedNote} />
+        <p className={styles.intro}>{album.intro}</p>
         <div className={styles.layout}>
           <div>
             <AlbumCover src={album.cover} title={album.title} subtitle={album.subtitle} meta={album.meta} size={280} />
@@ -19,14 +20,16 @@ export default function Discografia() {
             </Button>
           </div>
           <div>
-            {trackGroups.map((group, groupIndex) => (
-              <div key={groupIndex}>
-                {group.suite && <div className={styles["suite-heading"]}>{group.suite}</div>}
-                {group.tracks.map((track) => (
-                  <TrackRow key={track.index} index={track.index} title={track.title} note={track.note} duration={track.duration} />
-                ))}
-              </div>
-            ))}
+            <div className={styles.tracklist}>
+              {trackGroups.map((group, groupIndex) => (
+                <div key={groupIndex} className={styles["suite-group"]}>
+                  {group.suite && <h3 className={styles["suite-heading"]}>{group.suite}</h3>}
+                  {group.tracks.map((track) => (
+                    <TrackRow key={track.index} index={track.index} title={track.title} note={track.note} duration={track.duration} />
+                  ))}
+                </div>
+              ))}
+            </div>
             <div className={styles["total-duration"]}>
               <span>Durata totale</span>
               <span>{album.totalDuration}</span>

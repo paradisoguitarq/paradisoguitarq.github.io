@@ -66,6 +66,7 @@
   color: var(--text-muted);
   max-width: var(--measure-prose);
   margin: var(--space-4) 0 0;
+  white-space: pre-line;
 }
 
 .tone-inverse .lead {

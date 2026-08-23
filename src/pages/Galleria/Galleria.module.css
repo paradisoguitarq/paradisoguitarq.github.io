@@ -27,11 +27,6 @@
   background: none;
 }
 
-.tile-featured {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
 .tile-image {
   position: absolute;
   inset: 0;
@@ -66,18 +61,50 @@
   border-radius: var(--radius-sm);
 }
 
-.close-button {
+.control-button {
   position: absolute;
-  top: var(--space-5);
-  right: var(--space-5);
   width: 44px;
   height: 44px;
   border-radius: var(--radius-pill);
   border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: var(--lightbox-control);
+  color: var(--lightbox-control-text);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background var(--dur-fast) var(--ease-standard);
+}
+
+.control-button:hover {
+  background: var(--lightbox-control-hover);
+}
+
+.control-close {
+  top: var(--space-5);
+  right: var(--space-5);
+}
+
+.control-prev,
+.control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.control-prev {
+  left: var(--space-5);
+}
+
+.control-next {
+  right: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .control-prev {
+    left: var(--space-3);
+  }
+
+  .control-next {
+    right: var(--space-3);
+  }
 }

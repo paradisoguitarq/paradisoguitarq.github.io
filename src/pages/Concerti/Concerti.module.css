@@ -19,18 +19,24 @@
   font-size: var(--fs-small);
 }
 
-.cta-section {
-  background: var(--surface-inverse);
-  padding: var(--section-y) 0;
-}
-
-.cta-container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 var(--gutter);
+.cta {
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-hairline);
   text-align: center;
 }
 
+.cta-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  color: var(--text-strong);
+}
+
+.cta-lead {
+  margin-top: var(--space-3);
+  color: var(--text-subtle);
+}
+
 .cta-button {
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
