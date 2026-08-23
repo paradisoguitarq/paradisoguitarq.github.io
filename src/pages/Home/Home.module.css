@@ -108,9 +108,6 @@
 .intro-text {
   margin-top: var(--space-5);
   max-width: var(--measure-prose);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  font-family: var(--font-display);
 }
 
 .intro-button {
@@ -250,7 +247,6 @@
 .discography-description {
   margin-top: var(--space-5);
   max-width: var(--measure-prose);
-  line-height: var(--lh-body);
 }
 
 .discography-actions {
