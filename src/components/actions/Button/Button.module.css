@@ -96,3 +96,18 @@
 .variant-inverse:not(:disabled):active {
   background: var(--sand-400);
 }
+
+/* Pointer-driven sizes are tuned for a cursor; touch needs a 44px target. */
+@media (pointer: coarse) {
+  .size-sm {
+    min-height: 40px;
+  }
+
+  .size-md {
+    min-height: 44px;
+  }
+
+  .size-lg {
+    min-height: 48px;
+  }
+}

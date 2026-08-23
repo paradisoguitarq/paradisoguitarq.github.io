@@ -1,6 +1,9 @@
 .hero {
   position: relative;
   height: 100vh;
+  /* Small-viewport height: the hero stays whole while a mobile browser's
+     toolbars are on screen, instead of pushing its own footer out of view. */
+  height: 100svh;
   overflow: hidden;
 }
 
@@ -47,7 +50,9 @@
   margin: var(--space-6) 0 0;
   width: max-content;
   max-width: 90vw;
-  font-size: 2rem;
+  /* Holds one line down to roughly 500px, then breaks to two rather than
+     shrinking below a readable size. */
+  font-size: clamp(1.0625rem, 3.2vw, 2rem);
   line-height: var(--lh-relaxed);
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-display);
@@ -55,7 +60,7 @@
 
 .hero-social {
   position: absolute;
-  bottom: var(--space-9);
+  bottom: clamp(var(--space-7), 10vw, var(--space-9));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -70,6 +75,30 @@
 
 .hero-social-link:hover {
   color: #fff;
+}
+
+/* Landscape phones: the centred mark and the bottom row would otherwise meet
+   in the middle, so both pull in. */
+@media (max-height: 560px) {
+  .hero-logo {
+    width: min(240px, 60vw);
+  }
+
+  .hero-tagline {
+    margin-top: var(--space-4);
+    font-size: clamp(0.9375rem, 2.2vw, 1.25rem);
+  }
+
+  .hero-social {
+    bottom: var(--space-5);
+  }
+}
+
+@media (pointer: coarse) {
+  .hero-social-link {
+    padding: var(--space-2);
+    margin: calc(var(--space-2) * -1);
+  }
 }
 
 .section {
@@ -159,8 +188,8 @@
 }
 
 .video-play-icon {
-  width: 76px;
-  height: 76px;
+  width: clamp(56px, 14vw, 76px);
+  height: clamp(56px, 14vw, 76px);
   border-radius: var(--radius-pill);
   background: var(--accent-primary);
   display: flex;
@@ -169,6 +198,8 @@
   color: #fff;
 }
 
+/* Four columns and two both tile the featured 2×2 portrait exactly; three
+   would leave a hole, so the grid steps straight from one to the other. */
 .musicians-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -258,4 +289,35 @@
 
 .concert-actions {
   margin-top: var(--space-5);
+}
+
+@media (max-width: 860px) {
+  .split-grid,
+  .discography-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* The framed portrait would stretch the full column width once stacked. */
+  .split-grid > :last-child {
+    width: 100%;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+
+  .musicians-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: clamp(150px, 26vw, 210px);
+  }
+}
+
+@media (max-width: 480px) {
+  .musician-caption {
+    left: var(--space-3);
+    right: var(--space-3);
+  }
+
+  .musician-name {
+    font-size: var(--fs-body);
+  }
 }

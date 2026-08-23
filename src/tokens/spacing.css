@@ -1,3 +1,10 @@
+/* Breakpoint ladder used across the site. Media queries cannot read custom
+   properties, so these live as literals in each stylesheet — keep to this set:
+     <=  480px  small phone
+     <=  640px  large phone
+     <=  860px  tablet portrait: two-column layouts collapse, the nav folds
+     <= 1080px  small laptop */
+
 :root {
   --space-0: 0;
   --space-1: 4px;
@@ -12,9 +19,17 @@
   --space-10: 128px;
   --space-11: 176px;
 
-  --gutter: var(--space-5);
-  --section-y: var(--space-9);
-  --section-y-tight: var(--space-8);
+  /* Fluid page rhythm. Each ceiling is the value the desktop design was drawn
+     against, so wide viewports are unchanged; the floor keeps phones compact. */
+  --gutter: clamp(16px, 4vw, 24px);
+  --section-y: clamp(56px, 9vw, 96px);
+  --section-y-tight: clamp(40px, 6vw, 64px);
+
+  /* The NavBar is fixed and overlays the page. Sections that open a route use
+     --section-y-top so their first line always clears the bar. */
+  --nav-h: 56px;
+  --section-y-top: max(var(--section-y), calc(var(--nav-h) + var(--space-5)));
+
   --container-max: 1200px;
   --container-prose: 760px;
   --container-wide: 1440px;

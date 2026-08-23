@@ -19,7 +19,7 @@
 }
 
 .brand-logo {
-  width: 180px;
+  width: clamp(132px, 34vw, 180px);
 }
 
 .contact {
@@ -96,4 +96,28 @@
 
 .social-link:hover {
   color: var(--text-on-inverse);
+}
+
+@media (max-width: 560px) {
+  /* Stacked, the mark reads better above the contact block than after it. */
+  .top {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .bottom {
+    margin-top: var(--space-5);
+  }
+}
+
+@media (pointer: coarse) {
+  .social-link {
+    padding: var(--space-2);
+    margin: calc(var(--space-2) * -1);
+  }
+
+  .social {
+    gap: var(--space-5);
+  }
 }

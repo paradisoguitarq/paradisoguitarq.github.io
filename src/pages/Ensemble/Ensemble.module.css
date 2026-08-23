@@ -1,6 +1,6 @@
 .intro-section {
   background: var(--surface-raised);
-  padding: var(--section-y) 0 var(--space-8);
+  padding: var(--section-y-top) 0 var(--section-y-tight);
 }
 
 .intro-container {
@@ -62,4 +62,16 @@
 
 .bio-paragraph {
   max-width: var(--measure-prose);
+}
+
+@media (max-width: 860px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* A full-width 4:5 portrait would dwarf the biography it introduces. */
+  .portrait {
+    max-width: 320px;
+  }
 }

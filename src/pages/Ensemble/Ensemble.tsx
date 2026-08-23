@@ -42,7 +42,7 @@ export default function Ensemble() {
             <Tabs items={memberTabs} value={activeMember.id} onChange={(id) => setSearchParams({ member: id })} />
           </div>
           <div className={styles["detail-grid"]}>
-            <div>
+            <div className={styles.portrait}>
               <FramedImage src={activeMember.photo} ratio="4 / 5" shape="soft" position={activeMember.portraitPosition} />
               <h3 className={styles["member-name"]}>{activeMember.name}</h3>
               <div className={styles["member-role"]}>{activeMember.role}</div>

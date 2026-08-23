@@ -2,7 +2,7 @@
   display: block;
   text-decoration: none;
   border-bottom: none;
-  width: var(--cover-size, 200px);
+  width: min(var(--cover-size, 200px), 100%);
 }
 
 .artwork {

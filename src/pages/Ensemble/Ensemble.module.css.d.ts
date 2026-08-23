@@ -9,6 +9,7 @@ declare const styles: {
   readonly "intro-text": string;
   readonly "member-name": string;
   readonly "member-role": string;
+  readonly "portrait": string;
   readonly "tabs-row": string;
 };
 export = styles;

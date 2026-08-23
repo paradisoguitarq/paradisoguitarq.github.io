@@ -1,6 +1,6 @@
 .section {
   background: var(--surface-raised);
-  padding: var(--section-y) 0;
+  padding: var(--section-y-top) 0 var(--section-y);
 }
 
 .container {
@@ -80,7 +80,7 @@
 }
 
 .social {
-  margin-top: var(--space-8);
+  margin-top: var(--section-y-tight);
   padding-top: var(--space-6);
   border-top: 1px solid var(--border-hairline);
 }
@@ -126,4 +126,10 @@
 
 .social-label {
   font-size: var(--fs-small);
+}
+
+@media (max-width: 560px) {
+  .methods {
+    grid-template-columns: 1fr;
+  }
 }

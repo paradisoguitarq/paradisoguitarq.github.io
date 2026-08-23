@@ -1,11 +1,24 @@
 .tabs {
   display: flex;
   gap: var(--space-6);
-  border-bottom: 1px solid var(--border-hairline);
+  /* Long label sets scroll sideways rather than wrapping or overflowing.
+     The rule under the strip is painted as a background because a real border
+     sits outside the scroll container and the active indicator could not
+     overlap it. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: linear-gradient(var(--border-hairline), var(--border-hairline)) bottom left / 100% 1px no-repeat;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .tab {
   position: relative;
+  flex: none;
+  white-space: nowrap;
   background: none;
   border: none;
   cursor: pointer;
@@ -28,8 +41,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;
-  height: 2px;
+  bottom: 0;
+  height: var(--border-w-rule);
   background: var(--canyon-500);
   opacity: 0;
   transition: opacity var(--dur-fast) var(--ease-standard);
@@ -41,4 +54,17 @@
 
 .tab-active::after {
   opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .tabs {
+    gap: var(--space-5);
+  }
+}
+
+@media (pointer: coarse) {
+  .tab {
+    padding-bottom: var(--space-4);
+    padding-top: var(--space-2);
+  }
 }

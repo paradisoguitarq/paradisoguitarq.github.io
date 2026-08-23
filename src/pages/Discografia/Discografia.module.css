@@ -1,6 +1,6 @@
 .section {
   background: var(--surface-raised);
-  padding: var(--section-y) 0;
+  padding: var(--section-y-top) 0 var(--section-y);
 }
 
 .container {
@@ -53,4 +53,17 @@
   justify-content: space-between;
   font-size: var(--fs-small);
   color: var(--text-subtle);
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  /* Stacked, the cover and its call to action keep the width they had in the
+     sidebar rather than spanning the whole tracklist. */
+  .release {
+    max-width: 320px;
+  }
 }

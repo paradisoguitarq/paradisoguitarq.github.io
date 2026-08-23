@@ -1,6 +1,6 @@
 .card {
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: clamp(var(--space-5), 5vw, var(--space-6));
   box-shadow: var(--shadow-xs);
   text-decoration: none;
   display: block;

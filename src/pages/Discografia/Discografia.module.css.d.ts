@@ -2,6 +2,7 @@ declare const styles: {
   readonly "container": string;
   readonly "intro": string;
   readonly "layout": string;
+  readonly "release": string;
   readonly "section": string;
   readonly "spotify-button": string;
   readonly "suite-group": string;

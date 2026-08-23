@@ -26,7 +26,8 @@
 .content {
   max-width: var(--container-max);
   margin: 0 auto;
-  height: 56px;
+  padding: 0 var(--gutter);
+  height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +72,7 @@
   left: 0;
   right: 0;
   bottom: -6px;
-  height: 2px;
+  height: var(--border-w-rule);
   background: var(--canyon-500);
   opacity: 0;
   transition: opacity var(--dur-fast) var(--ease-standard);
@@ -83,4 +84,80 @@
 
 .link-active::after {
   opacity: 1;
+}
+
+/* The whole row fits on one line only while there is room for six labels
+   beside the logo; below that it folds into a drop-down panel. */
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    /* Pull the icon's own padding back so it optically lines up with the gutter. */
+    margin-right: calc(var(--space-3) * -1);
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--text-on-inverse);
+    cursor: pointer;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-2) var(--gutter) var(--space-4);
+    background: var(--surface-inverse-translucent);
+    backdrop-filter: var(--blur-veil);
+    border-bottom: 1px solid var(--border-inverse);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    /* Hidden rather than merely transparent, so the collapsed panel is out of
+       the tab order and the accessibility tree. Transitioning visibility keeps
+       it painted for the length of the fade on the way out. */
+    visibility: hidden;
+    transform: translateY(calc(var(--space-2) * -1));
+    transition:
+      opacity var(--dur-base) var(--ease-standard),
+      transform var(--dur-base) var(--ease-standard),
+      visibility var(--dur-base) var(--ease-standard);
+  }
+
+  .nav-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: var(--fs-small);
+    letter-spacing: 0.06em;
+  }
+
+  .link + .link {
+    border-top: 1px solid var(--border-inverse);
+  }
+
+  /* Stacked, the indicator reads as a marker in the panel's left margin. */
+  .link::after {
+    left: calc(var(--gutter) * -1);
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: var(--border-w-rule);
+    height: auto;
+  }
 }

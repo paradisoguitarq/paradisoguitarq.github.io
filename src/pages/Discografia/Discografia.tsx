@@ -13,7 +13,7 @@ export default function Discografia() {
         <SectionHeading eyebrow="Discografia" title={`${album.title}: ${album.subtitle}`} lead={album.recordedNote} />
         <p className={styles.intro}>{album.intro}</p>
         <div className={styles.layout}>
-          <div>
+          <div className={styles.release}>
             <AlbumCover src={album.cover} title={album.title} subtitle={album.subtitle} meta={album.meta} size={280} />
             <Button href={album.spotifyHref} target="_blank" rel="noopener noreferrer" fullWidth className={styles["spotify-button"]}>
               Ascolta su Spotify

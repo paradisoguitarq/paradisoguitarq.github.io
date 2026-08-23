@@ -1,8 +1,11 @@
+import { useActiveTabScroll } from "./active-tab-scroll";
 import styles from "./Tabs.module.css";
 
 export default function Tabs({ items, value, onChange }: TabsProps) {
+  const tablistRef = useActiveTabScroll(value);
+
   return (
-    <div role="tablist" className={styles.tabs}>
+    <div ref={tablistRef} role="tablist" className={styles.tabs}>
       {items.map((item) => {
         const active = value === item.id;
         const tabClassNames = [styles.tab, active ? styles["tab-active"] : undefined].filter(Boolean).join(" ");

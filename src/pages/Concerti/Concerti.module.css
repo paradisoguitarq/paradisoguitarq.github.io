@@ -1,6 +1,6 @@
 .list-section {
   background: var(--surface-raised);
-  padding: var(--section-y) 0;
+  padding: var(--section-y-top) 0 var(--section-y);
 }
 
 .list-container {
@@ -20,8 +20,8 @@
 }
 
 .cta {
-  margin-top: var(--space-8);
-  padding-top: var(--space-8);
+  margin-top: var(--section-y-tight);
+  padding-top: var(--section-y-tight);
   border-top: 1px solid var(--border-hairline);
   text-align: center;
 }

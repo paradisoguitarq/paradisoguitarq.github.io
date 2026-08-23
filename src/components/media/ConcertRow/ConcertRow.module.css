@@ -1,6 +1,6 @@
 .row {
   display: grid;
-  grid-template-columns: 88px 1fr auto;
+  grid-template-columns: 88px minmax(0, 1fr);
   gap: var(--space-5);
   align-items: center;
 }
@@ -45,4 +45,19 @@
 .venue {
   font-size: var(--fs-small);
   color: var(--text-subtle);
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .date-block {
+    padding-right: var(--space-3);
+  }
+
+  .date {
+    font-size: 26px;
+  }
 }

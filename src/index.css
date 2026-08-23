@@ -4,7 +4,16 @@ html,
 body,
 #root {
   min-height: 100vh;
+  /* Small-viewport units keep the page a full screen tall while a mobile
+     browser's toolbars are showing, instead of overflowing behind them. */
+  min-height: 100svh;
   width: 100%;
+}
+
+html {
+  /* Anchors and route changes must not land under the fixed NavBar. */
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
 }
 
 #root {
