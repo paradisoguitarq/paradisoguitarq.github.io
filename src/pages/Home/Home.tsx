@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
-
+import { nextConcert } from "../../lib/pgq/concerts";
+import { album } from "../../lib/pgq/discography";
+import { members } from "../../lib/pgq/members";
+import { socialLinks } from "../../lib/pgq/social";
 import Button from "../../components/actions/Button";
 import Card from "../../components/display/Card";
 import FramedImage from "../../components/display/FramedImage";
@@ -9,11 +12,8 @@ import SectionHeading from "../../components/display/SectionHeading";
 import AlbumCover from "../../components/media/AlbumCover";
 import ConcertRow from "../../components/media/ConcertRow";
 import heroBackground from "../../assets/images/background.jpeg";
+import ensemble from "../../assets/images/ensemble.jpg";
 import heroLogo from "../../assets/images/logo-pgq-hero-white.svg";
-import { nextConcert } from "../../lib/pgq/concerts";
-import { album } from "../../lib/pgq/discography";
-import { members } from "../../lib/pgq/members";
-import { socialLinks } from "../../lib/pgq/social";
 
 import styles from "./Home.module.css";
 
@@ -56,7 +56,7 @@ export default function Home() {
               Conosci l'ensemble
             </Button>
           </div>
-          <FramedImage src={heroBackground} ratio="4 / 5" shape="arch" zoom />
+          <FramedImage src={ensemble} ratio="4 / 5" shape="arch" zoom />
         </div>
       </section>
 

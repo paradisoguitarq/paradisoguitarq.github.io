@@ -9,7 +9,6 @@ const meta = {
   component: Footer,
   args: {
     logoSrc: logoPgqWhite,
-    note: "Paradiso Guitar Quartet & Bass, quattro chitarre classiche e un contrabbasso.",
     social: [
       { label: "Facebook", href: "https://facebook.com", icon: <FaFacebook size={18} /> },
       { label: "Instagram", href: "https://instagram.com", icon: <FaInstagram size={18} /> },

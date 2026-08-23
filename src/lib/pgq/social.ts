@@ -10,6 +10,8 @@ export const socialLinks: SocialLink[] = [
 
 export const contactEmail = "info@paradisoguitarq.it";
 
+export const contactPhone = "+39 3358210956";
+
 export type SocialLink = {
   label: string;
   href: string;

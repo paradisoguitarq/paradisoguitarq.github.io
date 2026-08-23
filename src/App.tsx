@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/galleria" element={<Galleria />} />
         <Route path="/contatti" element={<Contatti />} />
       </Routes>
-      <Footer logoSrc={logoWhite} note="Paradiso Guitar Quartet & Bass, quattro chitarre classiche e un contrabbasso." social={footerSocial} />
+      <Footer logoSrc={logoWhite} social={footerSocial} />
     </>
   );
 }
