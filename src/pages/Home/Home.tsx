@@ -141,7 +141,7 @@ export default function Home() {
       <section className={`${styles.section} ${styles["on-warm"]}`}>
         <div className={styles.container}>
           <SectionHeading eyebrow="In concerto" title="Prossima data" />
-          <Card padding="none" className={styles["concert-actions"]}>
+          <Card className={styles["concert-actions"]}>
             <ConcertRow {...nextConcert} />
           </Card>
           <Button variant="ghost" to="/concerti" className={styles["concert-actions"]}>

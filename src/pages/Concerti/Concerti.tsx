@@ -13,7 +13,7 @@ export default function Concerti() {
       <section className={styles["list-section"]}>
         <div className={styles["list-container"]}>
           <SectionHeading eyebrow="In concerto" title="Le date del PGQ" />
-          <Card padding="none" className={styles["concert-card"]}>
+          <Card className={styles["concert-card"]}>
             <ConcertRow {...nextConcert} />
           </Card>
           <p className={styles.note}>Le prossime date saranno pubblicate qui non appena confermate.</p>
