@@ -1,0 +1,36 @@
+.list-section {
+  background: var(--surface-raised);
+  padding: var(--section-y) 0;
+}
+
+.list-container {
+  max-width: var(--container-prose);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.concert-card {
+  margin-top: var(--space-6);
+}
+
+.note {
+  margin-top: var(--space-5);
+  color: var(--text-subtle);
+  font-size: var(--fs-small);
+}
+
+.cta-section {
+  background: var(--surface-inverse);
+  padding: var(--section-y) 0;
+}
+
+.cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+
+.cta-button {
+  margin-top: var(--space-7);
+}

@@ -1,0 +1,44 @@
+.section {
+  background: var(--surface-raised);
+  padding: var(--section-y) 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-7);
+  align-items: start;
+}
+
+.spotify-button {
+  margin-top: var(--space-5);
+}
+
+.suite-heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--wood-600);
+  font-size: var(--fs-h4);
+  margin: var(--space-6) 0 var(--space-3);
+}
+
+.suite-heading:first-child {
+  margin-top: 0;
+}
+
+.total-duration {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-hairline);
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-small);
+  color: var(--text-subtle);
+}

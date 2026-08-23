@@ -1,0 +1,87 @@
+:root {
+  /* --- Base ramps ------------------------------------------------------- */
+  /* Contrabass: the deep end of the palette. Warm-black, never neutral. */
+  --bass-900: #170908;
+  --bass-800: #24100c;
+  --bass-700: #2e1611;
+  --bass-600: #3f1e16;
+  --bass-500: #5a2a1b;
+  /* Rosewood / bordeaux: the album-title red. */
+  --wood-700: #5e1a13;
+  --wood-600: #7a1f16;
+  --wood-500: #96311f;
+  --wood-400: #b04a2c;
+  /* Canyon: primary warm accent, the terracotta of the sandstone. */
+  --canyon-600: #a93f22;
+  --canyon-500: #c24e2a;
+  --canyon-400: #d46a40;
+  --canyon-300: #e58a5e;
+  --canyon-200: #f0b394;
+  /* Amber: sunset light, the glow on the guitar top. */
+  --amber-600: #c9821f;
+  --amber-500: #e3a03a;
+  --amber-400: #efb65c;
+  --amber-300: #f6ce8c;
+  --amber-200: #fbe3bc;
+  /* Sand: paper, plaster, spruce soundboard. */
+  --sand-100: #fbf6ef;
+  --sand-200: #f5ede2;
+  --sand-300: #ebdcc9;
+  --sand-400: #dcc7ae;
+  --sand-500: #c4a98d;
+  /* Dusk: the only cool family — stage light on a stone wall. Use sparingly. */
+  --dusk-700: #2c4257;
+  --dusk-600: #3d5a78;
+  --dusk-500: #5b7b9b;
+  --dusk-400: #8fa8bf;
+  /* Semantic hues (kept warm-leaning) */
+  --olive-500: #6e7a3c;
+  --olive-600: #57612d;
+  --clay-500: #b3402c;
+  --brass-500: #b9862b;
+
+  /* --- Semantic aliases -------------------------------------------------- */
+  --surface-page: var(--sand-200);
+  --surface-raised: var(--sand-100);
+  --surface-card: #ffffff;
+  --surface-sunken: var(--sand-300);
+  --surface-inverse: var(--bass-800);
+  --surface-inverse-raised: var(--bass-700);
+  --surface-accent: var(--amber-200);
+
+  --text-body: var(--bass-700);
+  --text-strong: var(--bass-900);
+  --text-muted: #6b4c3e;
+  --text-subtle: #8a6c5b;
+  --text-on-inverse: var(--sand-200);
+  --text-on-inverse-muted: #b39c89;
+  --text-on-accent: #ffffff;
+  --text-link: var(--canyon-600);
+  --text-link-hover: var(--wood-600);
+
+  --accent-primary: var(--canyon-500);
+  --accent-primary-hover: var(--canyon-600);
+  --accent-primary-press: var(--wood-600);
+  --accent-secondary: var(--amber-500);
+  --accent-quiet: var(--dusk-600);
+
+  --border-hairline: rgba(46, 22, 17, 0.14);
+  --border-default: rgba(46, 22, 17, 0.22);
+  --border-strong: rgba(46, 22, 17, 0.4);
+  --border-inverse: rgba(245, 237, 226, 0.18);
+  --border-accent: var(--canyon-500);
+
+  --focus-ring: var(--amber-500);
+
+  --status-success: var(--olive-600);
+  --status-warning: var(--brass-500);
+  --status-danger: var(--clay-500);
+  --status-info: var(--dusk-600);
+
+  /* Protection gradients for text over photography */
+  --scrim-bottom: linear-gradient(to top, rgba(23, 9, 8, 0.86) 0%, rgba(23, 9, 8, 0.55) 38%, rgba(23, 9, 8, 0) 100%);
+  --scrim-full: linear-gradient(to right, rgba(23, 9, 8, 0.82) 0%, rgba(23, 9, 8, 0.45) 55%, rgba(23, 9, 8, 0.1) 100%);
+  --wash-warm: linear-gradient(180deg, var(--sand-200) 0%, var(--sand-300) 100%);
+  --tile-scrim: linear-gradient(to top, rgba(23, 9, 8, 0.78), rgba(23, 9, 8, 0) 60%);
+  --lightbox-scrim: rgba(23, 9, 8, 0.88);
+}

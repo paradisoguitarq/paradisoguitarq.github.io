@@ -1,0 +1,11 @@
+:root {
+  --dur-instant: 90ms;
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+  --dur-cinematic: 900ms;
+  --ease-standard: cubic-bezier(0.32, 0.72, 0.32, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+  /* No bounce, no overshoot anywhere in this system. */
+}

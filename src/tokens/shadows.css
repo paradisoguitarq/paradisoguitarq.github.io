@@ -1,0 +1,11 @@
+:root {
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px rgba(46, 22, 17, 0.08);
+  --shadow-sm: 0 2px 6px rgba(46, 22, 17, 0.1);
+  --shadow-md: 0 6px 18px rgba(46, 22, 17, 0.12);
+  --shadow-lg: 0 18px 44px rgba(46, 22, 17, 0.18);
+  --shadow-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --shadow-inset-well: inset 0 1px 3px rgba(46, 22, 17, 0.14);
+  --shadow-focus: 0 0 0 3px rgba(227, 160, 58, 0.55);
+  --blur-veil: saturate(115%) blur(14px);
+}

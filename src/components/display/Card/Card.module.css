@@ -1,0 +1,32 @@
+.card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-xs);
+  text-decoration: none;
+  display: block;
+  background: var(--surface-card);
+  color: var(--text-body);
+  border: 1px solid var(--border-hairline);
+  transition:
+    box-shadow var(--dur-base) var(--ease-standard),
+    transform var(--dur-base) var(--ease-standard);
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.tone-sunken {
+  background: var(--surface-sunken);
+}
+
+.tone-inverse {
+  background: var(--surface-inverse-raised);
+  color: var(--text-on-inverse);
+  border-color: var(--border-inverse);
+}
+
+.interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
