@@ -12,20 +12,24 @@ import Ensemble from "./pages/Ensemble";
 import Galleria from "./pages/Galleria";
 import Home from "./pages/Home";
 
+import styles from "./App.module.css";
+
 const footerSocial = socialLinks.map(({ label, href, Icon }) => ({ label, href, icon: <Icon size={18} /> }));
 
 export default function App() {
   return (
     <>
       <NavBar logoSrc={logoWhite} items={navItems} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ensemble" element={<Ensemble />} />
-        <Route path="/discografia" element={<Discografia />} />
-        <Route path="/concerti" element={<Concerti />} />
-        <Route path="/galleria" element={<Galleria />} />
-        <Route path="/contatti" element={<Contatti />} />
-      </Routes>
+      <main className={styles.main}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ensemble" element={<Ensemble />} />
+          <Route path="/discografia" element={<Discografia />} />
+          <Route path="/concerti" element={<Concerti />} />
+          <Route path="/galleria" element={<Galleria />} />
+          <Route path="/contatti" element={<Contatti />} />
+        </Routes>
+      </main>
       <Footer logoSrc={logoWhite} social={footerSocial} />
     </>
   );

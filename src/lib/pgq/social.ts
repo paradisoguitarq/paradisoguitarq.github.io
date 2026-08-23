@@ -12,6 +12,8 @@ export const contactEmail = "info@paradisoguitarq.it";
 
 export const contactPhone = "+39 3358210956";
 
+export const contactPhoneHref = `tel:${contactPhone.replace(/\s/g, "")}`;
+
 export type SocialLink = {
   label: string;
   href: string;

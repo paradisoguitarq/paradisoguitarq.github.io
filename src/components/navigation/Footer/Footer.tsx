@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
-import { contactEmail, contactPhone } from "../../../lib/pgq/social";
+import { contactEmail, contactPhone, contactPhoneHref } from "../../../lib/pgq/social";
 
 import styles from "./Footer.module.css";
 
@@ -20,7 +20,7 @@ export default function Footer({ logoSrc, social }: FooterProps) {
             </span>
             <span className={styles["contact-row"]}>
               <FaPhoneAlt size={14} aria-hidden className={styles["contact-icon"]} />
-              <a href={phoneHref} className={styles["contact-link"]}>
+              <a href={contactPhoneHref} className={styles["contact-link"]}>
                 {contactPhone}
               </a>
             </span>
@@ -41,8 +41,6 @@ export default function Footer({ logoSrc, social }: FooterProps) {
     </footer>
   );
 }
-
-const phoneHref = `tel:${contactPhone.replace(/\s/g, "")}`;
 
 export type FooterSocialLink = {
   label: string;

@@ -1,0 +1,11 @@
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The last section of a page absorbs any leftover height, so a short page
+   still paints its own background all the way down to the footer. */
+.main > :last-child {
+  flex: 1;
+}
