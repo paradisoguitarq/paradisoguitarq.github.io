@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 92vh;
+  height: 100vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -48,7 +48,6 @@
   font-size: 1.5rem;
   line-height: var(--lh-relaxed);
   color: rgba(255, 255, 255, 0.9);
-  max-width: var(--measure-narrow);
   margin: 0 0 var(--space-6);
   font-family: var(--font-display);
 }

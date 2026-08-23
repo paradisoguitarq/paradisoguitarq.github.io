@@ -32,7 +32,7 @@ export default function Home() {
         <div className={styles["hero-scrim-bottom"]} />
         <div className={styles["hero-content"]}>
           <img src={heroLogo} alt="PGQ, Paradiso Guitar Quartet & Bass" className={styles["hero-logo"]} />
-          <p className={styles["hero-tagline"]}>Tre generazioni raccontano la musica</p>
+          <p className={styles["hero-tagline"]}>Tre generazioni di musicisti raccontano il mondo attraverso le corde</p>
           <div className={styles["hero-social"]}>
             {socialLinks.map(({ label, href, Icon }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles["hero-social-link"]}>

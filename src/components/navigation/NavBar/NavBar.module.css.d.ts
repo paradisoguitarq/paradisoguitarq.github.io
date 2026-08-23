@@ -1,6 +1,7 @@
 declare const styles: {
   readonly "content": string;
   readonly "header": string;
+  readonly "hidden": string;
   readonly "link": string;
   readonly "link-active": string;
   readonly "logo": string;

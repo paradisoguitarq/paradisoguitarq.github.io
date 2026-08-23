@@ -2,8 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Footer from "./components/navigation/Footer";
 import NavBar from "./components/navigation/NavBar";
-import logoDark from "./assets/images/logo-pgq-dark.png";
-import logoWhite from "./assets/images/logo-pgq-white.png";
+import logoWhite from "./assets/images/logo-pgq-hero-white.svg";
 import { navItems } from "./lib/pgq/nav";
 import { socialLinks } from "./lib/pgq/social";
 import Concerti from "./pages/Concerti";
@@ -18,7 +17,7 @@ const footerSocial = socialLinks.map(({ label, href, Icon }) => ({ label, href, 
 export default function App() {
   return (
     <>
-      <NavBar logoSrc={logoDark} items={navItems} />
+      <NavBar logoSrc={logoWhite} items={navItems} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ensemble" element={<Ensemble />} />

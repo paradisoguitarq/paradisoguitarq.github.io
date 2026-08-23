@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import logoPgqDark from "../../../assets/images/logo-pgq-dark.png";
+import logoPgqWhite from "../../../assets/images/logo-pgq-hero-white.svg";
 import NavBar from "./NavBar";
 
 const meta = {
   title: "navigation/NavBar",
   component: NavBar,
   args: {
-    logoSrc: logoPgqDark,
+    logoSrc: logoPgqWhite,
     items: [
       { to: "/", label: "Home" },
       { to: "/ensemble", label: "Ensemble" },

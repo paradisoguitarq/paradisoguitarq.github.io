@@ -47,6 +47,7 @@
   --surface-sunken: var(--sand-300);
   --surface-inverse: var(--bass-800);
   --surface-inverse-raised: var(--bass-700);
+  --surface-inverse-translucent: rgba(23, 9, 8, 0.82);
   --surface-accent: var(--amber-200);
 
   --text-body: var(--bass-700);
