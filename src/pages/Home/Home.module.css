@@ -170,6 +170,7 @@
 .musicians-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 170px;
   gap: var(--space-4);
   margin-top: var(--space-7);
 }
@@ -182,14 +183,13 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: none;
-  height: 160px;
   text-decoration: none;
   display: block;
 }
 
 .musician-tile-featured {
-  grid-column: 1 / -1;
-  height: 260px;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .musician-image {

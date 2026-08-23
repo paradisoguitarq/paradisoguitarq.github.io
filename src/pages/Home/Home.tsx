@@ -99,7 +99,10 @@ export default function Home() {
               aria-label={featuredMember.name}
               className={`${styles["musician-tile"]} ${styles["musician-tile-featured"]}`}
             >
-              <span className={styles["musician-image"]} style={{ backgroundImage: `url(${featuredMember.photo})` }} />
+              <span
+                className={styles["musician-image"]}
+                style={{ backgroundImage: `url(${featuredMember.photo})`, backgroundPosition: featuredMember.photoPosition }}
+              />
               <span className={styles["musician-scrim"]} />
               <span className={styles["musician-caption"]}>
                 <span className={styles["musician-name"]}>{featuredMember.name}</span>
@@ -108,7 +111,10 @@ export default function Home() {
             </Link>
             {otherMembers.map((member) => (
               <Link key={member.id} to={`/ensemble?member=${member.id}`} aria-label={member.name} className={styles["musician-tile"]}>
-                <span className={styles["musician-image"]} style={{ backgroundImage: `url(${member.photo})` }} />
+                <span
+                  className={styles["musician-image"]}
+                  style={{ backgroundImage: `url(${member.photo})`, backgroundPosition: member.photoPosition }}
+                />
                 <span className={styles["musician-scrim"]} />
                 <span className={styles["musician-caption"]}>
                   <span className={styles["musician-name"]}>{member.name}</span>
