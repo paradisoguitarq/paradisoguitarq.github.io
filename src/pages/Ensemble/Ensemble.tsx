@@ -43,7 +43,7 @@ export default function Ensemble() {
           </div>
           <div className={styles["detail-grid"]}>
             <div>
-              <FramedImage src={activeMember.photo} ratio="4 / 5" shape="soft" />
+              <FramedImage src={activeMember.photo} ratio="4 / 5" shape="soft" position={activeMember.portraitPosition} />
               <h3 className={styles["member-name"]}>{activeMember.name}</h3>
               <div className={styles["member-role"]}>{activeMember.role}</div>
             </div>

@@ -13,7 +13,7 @@ import AlbumCover from "../../components/media/AlbumCover";
 import ConcertRow from "../../components/media/ConcertRow";
 import heroBackground from "../../assets/images/background.jpeg";
 import ensemble from "../../assets/images/ensemble.jpg";
-import heroLogo from "../../assets/images/logo-pgq-hero-white.svg";
+import heroLogo from "../../assets/images/logo-pgq-white.svg";
 
 import styles from "./Home.module.css";
 
@@ -28,18 +28,18 @@ export default function Home() {
     <>
       <section className={styles.hero}>
         <img src={heroBackground} alt="Il PGQ in concerto" className={styles["hero-image"]} />
-        <div className={styles["hero-scrim-full"]} />
+        <div className={styles["hero-scrim-center"]} />
         <div className={styles["hero-scrim-bottom"]} />
-        <div className={styles["hero-content"]}>
+        <div className={styles["hero-brand"]}>
           <img src={heroLogo} alt="PGQ, Paradiso Guitar Quartet & Bass" className={styles["hero-logo"]} />
           <p className={styles["hero-tagline"]}>Tre generazioni di musicisti raccontano il mondo attraverso le corde</p>
-          <div className={styles["hero-social"]}>
-            {socialLinks.map(({ label, href, Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles["hero-social-link"]}>
-                <Icon size={24} />
-              </a>
-            ))}
-          </div>
+        </div>
+        <div className={styles["hero-social"]}>
+          {socialLinks.map(({ label, href, Icon }) => (
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles["hero-social-link"]}>
+              <Icon size={24} />
+            </a>
+          ))}
         </div>
       </section>
 

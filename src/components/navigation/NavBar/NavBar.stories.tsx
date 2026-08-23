@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import logoPgqWhite from "../../../assets/images/logo-pgq-hero-white.svg";
+import logoPgqWhite from "../../../assets/images/logo-pgq-white.svg";
 import NavBar from "./NavBar";
 
 const meta = {

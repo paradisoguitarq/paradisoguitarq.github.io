@@ -49,3 +49,7 @@ export const WithCaption: Story = {
 export const Zoom: Story = {
   args: { zoom: true },
 };
+
+export const Positioned: Story = {
+  args: { ratio: "4 / 5", shape: "soft", position: "32% center" },
+};

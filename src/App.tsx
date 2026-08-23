@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Footer from "./components/navigation/Footer";
 import NavBar from "./components/navigation/NavBar";
-import logoWhite from "./assets/images/logo-pgq-hero-white.svg";
+import logoWhite from "./assets/images/logo-pgq-white.svg";
 import { navItems } from "./lib/pgq/nav";
 import { socialLinks } from "./lib/pgq/social";
 import Concerti from "./pages/Concerti";

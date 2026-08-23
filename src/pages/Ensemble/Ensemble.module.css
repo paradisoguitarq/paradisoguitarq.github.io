@@ -17,7 +17,7 @@
 
 .detail-section {
   background: var(--surface-page);
-  padding: var(--space-8) 0 var(--section-y);
+  padding: var(--space-6) 0 var(--section-y);
 }
 
 .container {

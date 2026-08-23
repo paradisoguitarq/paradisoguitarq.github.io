@@ -5,11 +5,11 @@ declare const styles: {
   readonly "discography-description": string;
   readonly "discography-grid": string;
   readonly "hero": string;
-  readonly "hero-content": string;
+  readonly "hero-brand": string;
   readonly "hero-image": string;
   readonly "hero-logo": string;
   readonly "hero-scrim-bottom": string;
-  readonly "hero-scrim-full": string;
+  readonly "hero-scrim-center": string;
   readonly "hero-social": string;
   readonly "hero-social-link": string;
   readonly "hero-tagline": string;

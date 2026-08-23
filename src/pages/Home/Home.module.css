@@ -1,8 +1,6 @@
 .hero {
   position: relative;
   height: 100vh;
-  display: flex;
-  align-items: flex-end;
   overflow: hidden;
 }
 
@@ -14,10 +12,10 @@
   object-fit: cover;
 }
 
-.hero-scrim-full {
+.hero-scrim-center {
   position: absolute;
   inset: 0;
-  background: var(--scrim-full);
+  background: var(--scrim-center);
 }
 
 .hero-scrim-bottom {
@@ -26,33 +24,40 @@
   background: var(--scrim-bottom);
 }
 
-.hero-content {
-  position: relative;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter) var(--space-9);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Positioned so the logo's own centre lands on the hero's centre; the tagline
+   hangs below it without shifting it. */
+.hero-brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .hero-logo {
   width: min(340px, 80vw);
   height: auto;
-  margin-bottom: var(--space-6);
 }
 
 .hero-tagline {
-  font-size: 1.5rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: var(--space-6) 0 0;
+  width: max-content;
+  max-width: 90vw;
+  font-size: 2rem;
   line-height: var(--lh-relaxed);
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 var(--space-6);
   font-family: var(--font-display);
 }
 
 .hero-social {
+  position: absolute;
+  bottom: var(--space-9);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: var(--space-5);
 }
@@ -185,6 +190,12 @@
   background: none;
   text-decoration: none;
   display: block;
+  box-shadow: var(--shadow-none);
+  transition: box-shadow var(--dur-base) var(--ease-standard);
+}
+
+.musician-tile:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .musician-tile-featured {

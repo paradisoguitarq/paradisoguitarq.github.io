@@ -81,7 +81,7 @@
 
   /* Protection gradients for text over photography */
   --scrim-bottom: linear-gradient(to top, rgba(23, 9, 8, 0.86) 0%, rgba(23, 9, 8, 0.55) 38%, rgba(23, 9, 8, 0) 100%);
-  --scrim-full: linear-gradient(to right, rgba(23, 9, 8, 0.82) 0%, rgba(23, 9, 8, 0.45) 55%, rgba(23, 9, 8, 0.1) 100%);
+  --scrim-center: radial-gradient(ellipse 65% 50% at 50% 50%, rgba(23, 9, 8, 0.82) 0%, rgba(23, 9, 8, 0.58) 42%, rgba(23, 9, 8, 0.34) 100%);
   --wash-warm: linear-gradient(180deg, var(--sand-200) 0%, var(--sand-300) 100%);
   --tile-scrim: linear-gradient(to top, rgba(23, 9, 8, 0.78), rgba(23, 9, 8, 0) 60%);
   --lightbox-scrim: rgba(23, 9, 8, 0.88);
