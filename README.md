@@ -1,75 +1,160 @@
-# React + TypeScript + Vite
+# Paradiso Guitar Quartet & Bass
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The website of the **PGQ** — Paradiso Guitar Quartet & Bass, a chamber ensemble of four classical
+guitars and a double bass founded by the composer and guitarist Vito Nicola Paradiso.
 
-Currently, two official plugins are available:
+Live at **[www.paradisoguitarq.it](https://www.paradisoguitarq.it)**. All site copy is in Italian.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## React Compiler
+- **React 19**, with the React Compiler enabled (`babel-plugin-react-compiler`)
+- **TypeScript**, strict
+- **Vite 7**
+- **React Router 7** (`BrowserRouter`)
+- **CSS Modules** over a token-based design system — no CSS framework, no component library
+- **Storybook 10** for component development
+- `react-icons` for iconography
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Getting started
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server prints its port (5173 unless it is taken).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Script | What it does |
+| :--- | :--- |
+| `npm run dev` | Vite dev server with HMR |
+| `npm run build` | `tsc -b` then `vite build`, into `dist/` |
+| `npm run preview` | Serves the production build locally |
+| `npm run lint` | ESLint over the repo |
+| `npm run storybook` | Storybook on port 6006 |
+| `npm run build-storybook` | Static Storybook build |
+| `npm run deploy` | Publishes `dist/` to the `gh-pages` branch (runs `vite build` directly, so it skips the `tsc -b` typecheck) |
+| `npm run tcm` | Watches `src/` and regenerates the CSS Module type declarations |
+| `npm run plop` | Component/page scaffolder (see [Known gaps](#known-gaps)) |
+
+`tcm` and `plop` both expect binaries that are **not** in `devDependencies`: `tcm` comes from a global
+[`typed-css-modules`](https://github.com/Quramy/typed-css-modules) install, `plop` from the local
+`plop` package.
+
+## Pages
+
+| Route | Contents |
+| :--- | :--- |
+| `/` | Full-bleed hero, ensemble introduction, live video, musicians grid, current album, next date |
+| `/ensemble` | The ensemble's repertoire, plus a member biography behind a tab strip |
+| `/discografia` | *The American Southwest: Travel Notes* — cover, tracklist, streaming links |
+| `/concerti` | Concert dates and a booking call to action |
+| `/galleria` | Photo grid with a lightbox |
+| `/contatti` | Email, phone, location, social links |
+
+## Project structure
+
 ```
+src/
+├── assets/      Images and the SVG wordmark; gallery photos live in assets/gallery/
+├── components/  Shared components, grouped by category (actions, display, media, navigation)
+├── lib/         Shared logic; site content lives in lib/pgq/
+├── pages/       One folder per route
+├── storybook/   Decorators and helpers for stories
+└── tokens/      The design system's custom properties
+```
+
+Site content is not hardcoded in the pages: bios, concert dates, discography, members, navigation and
+social links are typed modules under `src/lib/pgq/`. Gallery photos are picked up automatically —
+`gallery.ts` globs `assets/gallery/`, then groups and orders them by filename prefix, so adding a
+photo is a matter of dropping a file in with the right prefix.
+
+## Conventions
+
+The full rules live in [`.claude/rules/`](.claude/rules) and are worth reading before adding code:
+
+- [`project-structure.md`](.claude/rules/project-structure.md) — folder layout, import boundaries,
+  component anatomy, and when a subcomponent earns a folder of its own
+- [`code-style-ts.md`](.claude/rules/code-style-ts.md) — TypeScript and React style
+- [`code-style-css.md`](.claude/rules/code-style-css.md) — CSS style and token usage
+
+The short version:
+
+- **PascalCase** is reserved for component folders and their `.tsx`/`.stories.tsx` files; everything
+  else — hooks, helpers, utilities — is **kebab-case**, with the `use` prefix dropped from filenames
+  (`scroll-state.ts` exports `useScrollState`).
+- A component folder holds `ComponentName.tsx`, `ComponentName.module.css`,
+  `ComponentName.stories.tsx`, `index.ts`, and any kebab-case helper scoped to it.
+- Components are exported as default function declarations. Props are `type` aliases, never
+  `interface`. `any` is not used.
+- **Pages must never import from each other.** Anything shared between two pages is promoted to
+  `src/components/<category>/` (UI) or `src/lib/` (logic) first.
+- The `*.module.css.d.ts` files are generated by `tcm` — do not hand-edit them.
+
+## Design system
+
+Every colour, space, radius, shadow, duration and type size is a custom property declared in
+`src/tokens/`, and raw values belong nowhere else. Stylesheets consume them as `var(--…)`.
+
+| File | Holds |
+| :--- | :--- |
+| `colors.css` | The warm ramps (bass, wood, canyon, amber, sand, dusk) and their semantic aliases |
+| `typography.css` | The two families — Cormorant Garamond for display, Source Sans 3 for UI — and the type scale |
+| `spacing.css` | The spacing scale, fluid page rhythm, container widths, and the breakpoint ladder |
+| `radii.css`, `shadows.css`, `motion.css` | Radii and border widths, elevation, durations and easings |
+| `base.css` | The element-level reset and defaults |
+| `fonts.css` | The Google Fonts import |
+
+Motion is deliberately restrained — the easing curves carry no bounce or overshoot.
+
+## Responsive behaviour
+
+The layout is fluid from 320px up. Media queries cannot read custom properties, so the breakpoints
+are literals, documented at the top of `src/tokens/spacing.css`:
+
+| Breakpoint | What changes |
+| :--- | :--- |
+| ≤ 1080px | Small laptop |
+| ≤ 860px | Tablet portrait: two-column layouts collapse, the nav folds into a drop-down menu |
+| ≤ 640px | Large phone |
+| ≤ 480px | Small phone |
+
+Between those, `--gutter`, `--section-y` and the heading sizes interpolate with `clamp()`. Each
+ceiling is the value the desktop design was drawn against, so wide viewports render unchanged.
+
+Two things worth knowing when touching layout:
+
+- The NavBar is `position: fixed` and overlays the page. A section that opens a route should use
+  `--section-y-top` for its top padding, not `--section-y`, so its first line always clears the bar.
+- Touch targets are widened under `@media (pointer: coarse)` rather than at a width breakpoint.
+
+## Deployment
+
+`npm run deploy` builds and pushes `dist/` to the `gh-pages` branch of
+`paradisoguitarq/paradisoguitarq.github.io`, which GitHub Pages serves at the custom domain. Because
+`vite.config.ts` sets `base: '/'`, the build only works at a domain root.
+
+`gh-pages` **replaces** the branch contents on every deploy, so anything the live site needs must be
+produced by the build. Files placed in `public/` are copied into `dist/` verbatim, which is the place
+for them.
+
+## Known gaps
+
+Pre-existing, and unrelated to any one feature:
+
+- **The custom domain is not in the build.** `CNAME` (`www.paradisoguitarq.it`) was committed
+  straight to the `gh-pages` branch and does not exist in `public/`, so the next `npm run deploy`
+  will drop it and the custom domain will stop resolving. The fix is a `public/CNAME` file.
+- **Deep links 404 in production.** The app uses `BrowserRouter`, but there is no `public/404.html`,
+  so GitHub Pages has no fallback for a hard load of `/ensemble` and friends. The usual remedy is a
+  `404.html` that is a copy of `index.html`.
+- **The story test runner does not start.** `vite.config.ts` wires up `@storybook/addon-vitest`
+  against a headless Chromium, but `npx vitest` currently fails to import its setup file
+  (`aria-query` no longer exports `elementRoles`). There is no `test` script, and the stories carry
+  no `play` functions, so nothing is asserted today. Several devDependencies are pinned to `latest`,
+  which is how the mismatch arrived.
+- **The `plop` generator is out of step with the conventions.** It writes a `types.ts` (props now
+  live beside the component), emits no `.module.css` or `.stories.tsx`, and targets
+  `src/components/ui/…` — a folder level the tree does not have. Copy an existing component folder
+  instead until it is rewritten.
