@@ -5,30 +5,36 @@ export const bios: Record<MemberId, BioSection[]> = {
     {
       heading: null,
       paragraphs: [
-        "Nato in Puglia nel 1964, dopo varie esperienze in diversi generi musicali, si diploma in chitarra nel 1987 in qualità di privatista con il massimo dei voti e la lode. Dalla fine degli anni ottanta, e per oltre un decennio, risulta vincitore in numerosi concorsi nazionali ed internazionali.",
+        "Dopo varie esperienze in diversi generi musicali, nel 1987 in qualità di privatista si è diploma in chitarra con il massimo dei voti e la lode.",
+        "Dalla fine degli anni ottanta, e per oltre un decennio, ha vinto premi e ricevuto numerosi riconoscimenti in competizioni nazionali e internazionali.",
       ],
     },
     {
-      heading: "Il Concertista",
+      heading: "Il concertista",
       paragraphs: [
-        "Ha tenuto innumerevoli concerti in prestigiose sale e teatri di città d'arte in Italia, Francia, Inghilterra, Spagna, Germania, Scozia, Olanda, Ungheria, Svizzera, e Irlanda, Canada, Messico, Argentina, Cina, Giappone e in diversi stati americani: California, Oklahoma, Arizona, Indiana, Washington e New York.",
-        "In qualità di solista ha eseguito diversi concerti per chitarra e orchestra e in ambito cameristico ha fatto parte di diversi ensemble, dal duo con il flauto, il violino, l'arpa, il canto e le percussioni sino al quintetto con archi, collaborando con artisti italiani e stranieri di fama internazionale.",
-        "Ha registrato diversi dischi come solista, tra cui: Una Chitarra in \"Frack\" (Edizioni Curci); Serenate latine del '900 (allegato alla rivista GuitArt); La magìa di una Chitarra (WLO Records), un CD interamente dedicato a personali trascrizioni di musica Partenopea.",
+        "Da concertista, ha realizzato numerosi concerti in prestigiosi teatri e sale da concerto in Italia, Francia, Inghilterra, Spagna, Germania, Scozia, Paesi Bassi, Belgio, Ungheria, Svizzera, Austria, Irlanda, Serbia, Slovenia, Montenegro, Turchia, Cina, Giappone, Messico, Argentina, Canada e diversi stati americani: California, Oklahoma, Indiana, Arizona, Nevada, Oregon, Washington, Massachusetts e New York. Come solista ha eseguito diversi concerti per chitarra e orchestra e collaborato con artisti di fama internazionale in formazioni cameristiche. Ha inciso diversi album da solista per importanti etichette discografiche europee, asiatiche e americane come Soundset Recordings, Da Vinci Classics, GuitArt, Edizioni Curci.",
+        "Tutta la sua musica è fruibile sulle più importanti piattaforme digitali.",
       ],
     },
     {
-      heading: "L'Autore",
+      heading: "Il compositore",
       paragraphs: [
-        "È l'autore del fortunato metodo di base LA CHITARRA VOLANTE, diviso in tre volumi con CD minus-one allegati, un vero e proprio best seller della didattica musicale di base, pubblicato dalla casa editrice Curci di Milano. La Chitarra Volante, da diversi anni, è tra i metodi di strumento musicale più venduti e utilizzati in Italia. Il metodo è inoltre adottato in diverse scuole e conservatori europei, negli Stati Uniti e in Sud America, ed è stato tradotto in lingua portoghese nel 2015 dalla casa editrice Vitale di Rio de Janeiro con il titolo O Violão Mágico.",
-        "Oltre al metodo, ha pubblicato diversi brani originali di genere descrittivo, dalla chitarra sola all'orchestra di chitarre: Preludi Sentimentali (con CD allegato interpretato da Giulio Tampalini), La Chitarra Volante Ensemble (volumi 1 e 2), I Love Guitar (musiche di Remo Vinciguerra), Travel in America, Danze Latino Americane e Impressioni Faunistiche. Le sue pubblicazioni hanno ricevuto numerosi riconoscimenti dalla critica, tra cui le cinque stelle della rivista Seicorde e la copertina di GuitArt.",
+        "Raffinato compositore di musica descrittiva, da diversi anni riceve commissioni per nuovi brani orchestrali da diverse Università e College negli Stati Uniti e in America Latina con cui frequentemente collabora e dirige prime esecuzioni mondiali. La sua musica per chitarra sola è regolarmente eseguita e registrata da importanti concertisti a livello internazionale.",
+        "Negli ultimi anni, si è esclusivamente concentrato sulla composizione e nei suoi concerti suona soltanto sue opere e personali trascrizioni di musica italiana.",
       ],
     },
     {
-      heading: "Il Didatta",
+      heading: "Il didatta",
       paragraphs: [
-        "È regolarmente invitato in tutto il mondo a tenere masterclass e seminari sulla sua metodologia didattica, in particolare per le orchestre di chitarre. Attualmente è docente di chitarra presso l'Istituto Superiore di Studi Musicali \"G. Paisiello\" di Taranto.",
-        "Nel 2000, a Roma, su oltre centocinquanta candidati, è risultato primo assoluto con 100 punti su 100 al Primo Concorso Nazionale a cattedre per l'insegnamento della chitarra nei corsi ad indirizzo musicale.",
-        "Numerosi sono i riconoscimenti ricevuti per la sua attività didattica, tra cui il premio \"Chitarra d'Oro\" per la Didattica al XVII Convegno Internazionale del Conservatorio \"A. Vivaldi\" di Alessandria, e il premio \"Maestro d'Italia\", ottenuto due volte, nel 2008 e nel 2012.",
+        "Già docente di Conservatorio, su centocinquanta candidati nel 2000 si è classificato primo assoluto al Primo Concorso Nazionale per l'insegnamento della chitarra nelle scuole statali ad indirizzo musicale. Destinatario di numerosi premi e riconoscimenti per la sua prolifica attività, tra cui la prestigiosa Chitarra d'Oro per la didattica nel 2012 al Convegno Internazionale di Chitarra, ha anche ottenuto per ben due volte il premio \"Maestro d'Italia\" (2008 e 2012).",
+        "Internazionalmente riconosciuto come uno dei maggiori esperti sulle orchestre di chitarre, realizza numerose masterclass e concerti in qualità di compositore e direttore."
+      ],
+    },
+    {
+      heading: "L'autore",
+      paragraphs: [
+        "A livello internazionale è uno dei più autorevoli rappresentanti nel campo della didattica di base per chitarra, essendo l'autore del best seller LA CHITARRA VOLANTE (Edizioni Curci - Milano), metodo questo per giovani chitarristi e che da anni è nella Top Ten dei libri didattici per strumenti musicali più venduti e utilizzati in Italia. Inoltre, lo stesso metodo è stato tradotto in lingua inglese e portoghese e adottato in diverse scuole e conservatori in Europa così come negli Stati Uniti e in sud America, ottenendo positive recensioni sulle più importanti riviste internazionali del settore.",
+        "Numerose sono le pubblicazioni a carattere didattico ma anche interessanti trascrizioni per sola chitarra di musica italiana."
       ],
     },
   ],
@@ -77,7 +83,7 @@ export const bios: Record<MemberId, BioSection[]> = {
         "Laureato in Medicina e Chirurgia, specializzato in Neurologia e in Medicina Fisica e Riabilitativa, dirige attualmente il Dipartimento di Neuroriabilitazione e Unità Spinale dell'IRCCS Maugeri di Bari.",
         "Ha iniziato lo studio della chitarra per poi perfezionarsi nel jazz sotto la guida del Maestro Guido Di Leone, dedicandosi in seguito allo studio del contrabbasso jazz con il Maestro Giuseppe Bassi.",
         "Nel corso degli anni si è esibito in diversi progetti jazz e blues, alternando chitarra e contrabbasso. Ha frequentato numerosi seminari e masterclass per approfondire le tecniche della chitarra jazz e acustica, con particolare attenzione al fingerpicking e allo stile Delta Blues, studiando tra gli altri con Franco Morone, Paolo Sereno, Preston Reed, Duck Baker, Franco Cerri, Joe Diorio e Pat Metheny.",
-        "Ha suonato il basso elettrico con il coro gospel Joyful, diretto dal Maestro Roberto Angiulo, e si esibisce come chitarrista nel duo blues Blue Finger, insieme alla cantante e chitarrista Samantha Nuzzi. Come contrabbassista ha inciso un disco di musica cubana e un altro dedicato alle musiche da film di Nino Rota.",
+        "Ha suonato il basso elettrico con il coro gospel Joyful, diretto dal Maestro Roberto Angiulo, e si esibisce come chitarrista nel trio acustico blues Blue Finger, insieme alla cantante e chitarrista Samantha Nuzzi e a Mimmo Stano alla batteria e percussioni. Come contrabbassista ha inciso un disco di musica cubana e un altro dedicato alle musiche da film di Nino Rota.",
         "È attualmente il contrabbassista del PGQ, Paradiso Guitar Quartet and Bass, ensemble composto da quattro chitarre classiche e un contrabbasso che esegue le composizioni originali del Maestro Vito Nicola Paradiso, fondatore e direttore del gruppo. Sta inoltre studiando Contrabbasso classico con il Maestro Giovanni Rinaldi presso il Conservatorio di Musica \"Nicolò Piccinni\" di Bari.",
       ],
     },
