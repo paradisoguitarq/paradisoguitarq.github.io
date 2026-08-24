@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaPlay } from "react-icons/fa";
 import { nextConcert } from "../../lib/pgq/concerts";
 import { album } from "../../lib/pgq/discography";
-import { useHeroScrollHint } from "../../lib/pgq/hero-scroll-hint";
+import { HERO_SCROLL_HINT_DISMISS_THRESHOLD, useHeroScrollHint } from "../../lib/pgq/hero-scroll-hint";
 import { members } from "../../lib/pgq/members";
 import { socialLinks } from "../../lib/pgq/social";
 import Button from "../../components/actions/Button";
@@ -19,20 +19,20 @@ import heroLogo from "../../assets/images/logo-pgq-white.svg";
 import styles from "./Home.module.css";
 
 const YOUTUBE_VIDEO_ID = "HHpE6SddOms";
-const SCROLL_HINT_DISMISS_THRESHOLD = 200;
 
 export default function Home() {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const featuredMember = members[0];
   const otherMembers = members.slice(1);
   const { isDismissed: isScrollHintDismissed, dismiss: dismissScrollHint } = useHeroScrollHint();
+  const ensembleSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (isScrollHintDismissed)
       return;
 
     function handleScroll() {
-      if (window.scrollY > SCROLL_HINT_DISMISS_THRESHOLD)
+      if (window.scrollY > HERO_SCROLL_HINT_DISMISS_THRESHOLD)
         dismissScrollHint();
     }
 
@@ -57,10 +57,19 @@ export default function Home() {
             </a>
           ))}
         </div>
-        {!isScrollHintDismissed && <FaChevronDown size={22} className={styles["hero-scroll-hint"]} aria-hidden="true" />}
+        <button
+          type="button"
+          onClick={() => ensembleSectionRef.current?.scrollIntoView({ behavior: "smooth" })}
+          aria-label="Scorri alla sezione successiva"
+          aria-hidden={isScrollHintDismissed}
+          tabIndex={isScrollHintDismissed ? -1 : 0}
+          className={`${styles["hero-scroll-hint"]} ${isScrollHintDismissed ? styles["hero-scroll-hint-dismissed"] : ""}`}
+        >
+          <FaChevronDown size={22} aria-hidden="true" />
+        </button>
       </section>
 
-      <section className={`${styles.section} ${styles["on-raised"]}`}>
+      <section ref={ensembleSectionRef} className={`${styles.section} ${styles["on-raised"]}`}>
         <div className={`${styles.container} ${styles["split-grid"]}`}>
           <div>
             <SectionHeading eyebrow="L'ensemble" title="Tre generazioni, una scuola" />

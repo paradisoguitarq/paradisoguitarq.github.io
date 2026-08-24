@@ -12,6 +12,7 @@ declare const styles: {
   readonly "hero-scrim-center": string;
   readonly "hero-scroll-hint": string;
   readonly "hero-scroll-hint-bounce": string;
+  readonly "hero-scroll-hint-dismissed": string;
   readonly "hero-social": string;
   readonly "hero-social-link": string;
   readonly "hero-tagline": string;
