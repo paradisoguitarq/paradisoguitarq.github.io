@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import FramedImage from "../../components/display/FramedImage";
@@ -17,6 +18,20 @@ export default function Ensemble() {
   const activeMember = members.find((member) => member.id === requestedId) ?? members.find((member) => member.id === DEFAULT_MEMBER_ID)!;
   const activeBio = bios[activeMember.id];
   const memberTabs = members.map((member) => ({ id: member.id, label: member.name }));
+  const detailSectionRef = useRef<HTMLElement>(null);
+  const arrivedWithMemberParamRef = useRef(requestedId !== null);
+
+  useEffect(() => {
+    if (!arrivedWithMemberParamRef.current)
+      return;
+
+    // Deferred so it runs after App's own mount effect, which resets scroll to the top on every route change.
+    const timeoutId = setTimeout(() => {
+      detailSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <>
@@ -36,7 +51,7 @@ export default function Ensemble() {
         </div>
       </section>
 
-      <section className={styles["detail-section"]}>
+      <section className={styles["detail-section"]} ref={detailSectionRef}>
         <div className={styles.container}>
           <div className={styles["tabs-row"]}>
             <Tabs items={memberTabs} value={activeMember.id} onChange={(id) => setSearchParams({ member: id })} />

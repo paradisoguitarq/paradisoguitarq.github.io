@@ -16,6 +16,7 @@
 .detail-section {
   background: var(--surface-page);
   padding: var(--space-6) 0 var(--section-y);
+  scroll-margin-top: var(--nav-h);
 }
 
 .container {
