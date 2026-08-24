@@ -19,22 +19,19 @@ export const bios: Record<MemberId, BioSection[]> = {
     {
       heading: "Il compositore",
       paragraphs: [
-        "Raffinato compositore di musica descrittiva, da diversi anni riceve commissioni per nuovi brani orchestrali da diverse Università e College negli Stati Uniti e in America Latina con cui frequentemente collabora e dirige prime esecuzioni mondiali. La sua musica per chitarra sola è regolarmente eseguita e registrata da importanti concertisti a livello internazionale.",
-        "Negli ultimi anni, si è esclusivamente concentrato sulla composizione e nei suoi concerti suona soltanto sue opere e personali trascrizioni di musica italiana.",
+        "Raffinato compositore di musica descrittiva, da diversi anni riceve commissioni per nuovi brani orchestrali da diverse Università e College negli Stati Uniti e in America Latina con cui frequentemente collabora e dirige prime esecuzioni mondiali. La sua musica per chitarra sola è regolarmente eseguita e registrata da importanti concertisti a livello internazionale. Negli ultimi anni, si è esclusivamente concentrato sulla composizione e nei suoi concerti suona soltanto sue opere e personali trascrizioni di musica italiana.",
       ],
     },
     {
       heading: "Il didatta",
       paragraphs: [
-        "Già docente di Conservatorio, su centocinquanta candidati nel 2000 si è classificato primo assoluto al Primo Concorso Nazionale per l'insegnamento della chitarra nelle scuole statali ad indirizzo musicale. Destinatario di numerosi premi e riconoscimenti per la sua prolifica attività, tra cui la prestigiosa Chitarra d'Oro per la didattica nel 2012 al Convegno Internazionale di Chitarra, ha anche ottenuto per ben due volte il premio \"Maestro d'Italia\" (2008 e 2012).",
-        "Internazionalmente riconosciuto come uno dei maggiori esperti sulle orchestre di chitarre, realizza numerose masterclass e concerti in qualità di compositore e direttore."
+        "Già docente di Conservatorio, su centocinquanta candidati nel 2000 si è classificato primo assoluto al Primo Concorso Nazionale per l'insegnamento della chitarra nelle scuole statali ad indirizzo musicale. Destinatario di numerosi premi e riconoscimenti per la sua prolifica attività, tra cui la prestigiosa Chitarra d'Oro per la didattica nel 2012 al Convegno Internazionale di Chitarra, ha anche ottenuto per ben due volte il premio \"Maestro d'Italia\" (2008 e 2012). Internazionalmente riconosciuto come uno dei maggiori esperti sulle orchestre di chitarre, realizza numerose masterclass e concerti in qualità di compositore e direttore.",
       ],
     },
     {
       heading: "L'autore",
       paragraphs: [
-        "A livello internazionale è uno dei più autorevoli rappresentanti nel campo della didattica di base per chitarra, essendo l'autore del best seller LA CHITARRA VOLANTE (Edizioni Curci - Milano), metodo questo per giovani chitarristi e che da anni è nella Top Ten dei libri didattici per strumenti musicali più venduti e utilizzati in Italia. Inoltre, lo stesso metodo è stato tradotto in lingua inglese e portoghese e adottato in diverse scuole e conservatori in Europa così come negli Stati Uniti e in sud America, ottenendo positive recensioni sulle più importanti riviste internazionali del settore.",
-        "Numerose sono le pubblicazioni a carattere didattico ma anche interessanti trascrizioni per sola chitarra di musica italiana."
+        "A livello internazionale è uno dei più autorevoli rappresentanti nel campo della didattica di base per chitarra, essendo l'autore del best seller LA CHITARRA VOLANTE (Edizioni Curci - Milano), metodo questo per giovani chitarristi e che da anni è nella Top Ten dei libri didattici per strumenti musicali più venduti e utilizzati in Italia. Inoltre, lo stesso metodo è stato tradotto in lingua inglese e portoghese e adottato in diverse scuole e conservatori in Europa così come negli Stati Uniti e in sud America, ottenendo positive recensioni sulle più importanti riviste internazionali del settore. Numerose sono le pubblicazioni a carattere didattico ma anche interessanti trascrizioni per sola chitarra di musica italiana.",
       ],
     },
   ],
