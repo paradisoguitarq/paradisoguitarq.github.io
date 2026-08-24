@@ -16,7 +16,7 @@ export const album: Album = {
 
 export const trackGroups: TrackGroup[] = [
   {
-    suite: "Travel in America · 2013",
+    suite: "Travel in America",
     tracks: [
       { index: 1, title: "America in the Sky", note: "il volo su Los Angeles, l'attesa che diventa gioia dell'arrivo", duration: "5'02" },
       { index: 2, title: "America on the Road", note: "il ritmo delle quattro frecce, poi la strada nel deserto dell'Arizona", duration: "4'48" },
@@ -24,14 +24,14 @@ export const trackGroups: TrackGroup[] = [
     ],
   },
   {
-    suite: "Night in Las Vegas · 2024",
+    suite: "Night in Las Vegas",
     tracks: [
       { index: 4, title: "Roulette & Slots", note: "la roulette dei casinò di Las Vegas, la tensione del gioco", duration: "3'53" },
       { index: 5, title: "For Boulevard", note: "una notte in decappottabile lungo i boulevard più scintillanti", duration: "3'02" },
     ],
   },
   {
-    suite: "Riverside · 2025",
+    suite: "Riverside",
     tracks: [
       { index: 6, title: "Stars on the Mountain", note: "la salita notturna del Mount Rubidoux, gli occhi rivolti alle stelle", duration: "3'04" },
       { index: 7, title: "Easter Sunrise", note: "l'alba di Pasqua sulla vetta, un risveglio quasi mistico", duration: "4'37" },

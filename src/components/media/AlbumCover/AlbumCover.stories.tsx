@@ -29,10 +29,6 @@ export const Large: Story = {
   args: { size: 280 },
 };
 
-export const AsLink: Story = {
-  args: { href: "/discografia" },
-};
-
 export const MinimalInfo: Story = {
   args: { subtitle: undefined, meta: undefined },
 };

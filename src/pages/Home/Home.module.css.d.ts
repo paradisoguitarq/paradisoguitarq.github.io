@@ -10,6 +10,8 @@ declare const styles: {
   readonly "hero-logo": string;
   readonly "hero-scrim-bottom": string;
   readonly "hero-scrim-center": string;
+  readonly "hero-scroll-hint": string;
+  readonly "hero-scroll-hint-bounce": string;
   readonly "hero-social": string;
   readonly "hero-social-link": string;
   readonly "hero-tagline": string;

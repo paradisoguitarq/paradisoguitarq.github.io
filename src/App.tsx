@@ -1,8 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import Footer from "./components/navigation/Footer";
 import NavBar from "./components/navigation/NavBar";
 import logoWhite from "./assets/images/logo-pgq-white.svg";
+import { HeroScrollHintProvider } from "./lib/pgq/hero-scroll-hint";
 import { navItems } from "./lib/pgq/nav";
 import { socialLinks } from "./lib/pgq/social";
 import Concerti from "./pages/Concerti";
@@ -17,8 +19,14 @@ import styles from "./App.module.css";
 const footerSocial = socialLinks.map(({ label, href, Icon }) => ({ label, href, icon: <Icon size={18} /> }));
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
-    <>
+    <HeroScrollHintProvider>
       <NavBar logoSrc={logoWhite} items={navItems} />
       <main className={styles.main}>
         <Routes>
@@ -31,6 +39,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer logoSrc={logoWhite} social={footerSocial} />
-    </>
+    </HeroScrollHintProvider>
   );
 }

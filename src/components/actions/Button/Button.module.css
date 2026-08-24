@@ -41,7 +41,8 @@
   padding: 15px 30px;
 }
 
-.variant-primary {
+.variant-primary,
+.variant-primary:hover {
   background: var(--accent-primary);
   color: #fff;
 }

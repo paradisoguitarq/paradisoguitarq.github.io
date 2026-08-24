@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaPlay } from "react-icons/fa";
+import { FaChevronDown, FaPlay } from "react-icons/fa";
 import { nextConcert } from "../../lib/pgq/concerts";
 import { album } from "../../lib/pgq/discography";
+import { useHeroScrollHint } from "../../lib/pgq/hero-scroll-hint";
 import { members } from "../../lib/pgq/members";
 import { socialLinks } from "../../lib/pgq/social";
 import Button from "../../components/actions/Button";
@@ -18,11 +19,26 @@ import heroLogo from "../../assets/images/logo-pgq-white.svg";
 import styles from "./Home.module.css";
 
 const YOUTUBE_VIDEO_ID = "HHpE6SddOms";
+const SCROLL_HINT_DISMISS_THRESHOLD = 200;
 
 export default function Home() {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const featuredMember = members[0];
   const otherMembers = members.slice(1);
+  const { isDismissed: isScrollHintDismissed, dismiss: dismissScrollHint } = useHeroScrollHint();
+
+  useEffect(() => {
+    if (isScrollHintDismissed)
+      return;
+
+    function handleScroll() {
+      if (window.scrollY > SCROLL_HINT_DISMISS_THRESHOLD)
+        dismissScrollHint();
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScrollHintDismissed, dismissScrollHint]);
 
   return (
     <>
@@ -41,6 +57,7 @@ export default function Home() {
             </a>
           ))}
         </div>
+        {!isScrollHintDismissed && <FaChevronDown size={22} className={styles["hero-scroll-hint"]} aria-hidden="true" />}
       </section>
 
       <section className={`${styles.section} ${styles["on-raised"]}`}>
