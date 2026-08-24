@@ -12,6 +12,7 @@ const meta = {
     title: "Concerto d'autunno",
     venue: "Teatro Piccinni",
     city: "Bari",
+    time: "20:30",
   },
 } satisfies Meta<typeof ConcertRow>;
 
@@ -27,4 +28,8 @@ export const WithoutYear: Story = {
 
 export const VenueOnly: Story = {
   args: { city: undefined },
+};
+
+export const WithoutTime: Story = {
+  args: { time: undefined },
 };

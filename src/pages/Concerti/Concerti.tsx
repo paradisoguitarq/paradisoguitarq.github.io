@@ -2,7 +2,7 @@ import Button from "../../components/actions/Button";
 import Card from "../../components/display/Card";
 import SectionHeading from "../../components/display/SectionHeading";
 import ConcertRow from "../../components/media/ConcertRow";
-import { nextConcert } from "../../lib/pgq/concerts";
+import { concerts } from "../../lib/pgq/concerts";
 
 import styles from "./Concerti.module.css";
 
@@ -11,9 +11,13 @@ export default function Concerti() {
     <section className={styles["list-section"]}>
       <div className={styles["list-container"]}>
         <SectionHeading eyebrow="In concerto" title="Le date del PGQ" />
-        <Card className={styles["concert-card"]}>
-          <ConcertRow {...nextConcert} />
-        </Card>
+        <div className={styles["concert-list"]}>
+          {concerts.map((concert) => (
+            <Card key={`${concert.date}-${concert.month}-${concert.title}`} className={styles["concert-card"]}>
+              <ConcertRow {...concert} />
+            </Card>
+          ))}
+        </div>
         <p className={styles.note}>Le prossime date saranno pubblicate qui non appena confermate.</p>
 
         <div className={styles.cta}>

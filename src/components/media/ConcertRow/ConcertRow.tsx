@@ -1,6 +1,6 @@
 import styles from "./ConcertRow.module.css";
 
-export default function ConcertRow({ date, month, year, title, venue, city }: ConcertRowProps) {
+export default function ConcertRow({ date, month, year, title, venue, city, time }: ConcertRowProps) {
   return (
     <div className={styles.row}>
       <div className={styles["date-block"]}>
@@ -14,6 +14,8 @@ export default function ConcertRow({ date, month, year, title, venue, city }: Co
           {venue}
           {venue && city ? " · " : ""}
           {city}
+          {(venue || city) && time ? " · " : ""}
+          {time && `ore ${time}`}
         </div>
       </div>
     </div>
@@ -27,4 +29,5 @@ export type ConcertRowProps = {
   title: string;
   venue: string;
   city?: string;
+  time?: string;
 };

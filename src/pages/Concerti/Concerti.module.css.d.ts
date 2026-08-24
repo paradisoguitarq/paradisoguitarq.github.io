@@ -1,5 +1,5 @@
 declare const styles: {
-  readonly "concert-card": string;
+  readonly "concert-list": string;
   readonly "cta": string;
   readonly "cta-button": string;
   readonly "cta-lead": string;
