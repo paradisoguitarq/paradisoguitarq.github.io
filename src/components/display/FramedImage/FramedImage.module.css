@@ -27,11 +27,16 @@
   height: 100%;
   object-fit: cover;
   object-position: var(--frame-position, 50% 50%);
+  /* Keeps the image on its own GPU layer at rest, so it is resampled the same
+     smooth way it is while the hover zoom's transform is running, instead of
+     being downscaled with the harsher non-composited path. */
+  transform: translateZ(0);
+  will-change: transform;
   transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .zoom:hover .image {
-  transform: scale(1.02);
+  transform: translateZ(0) scale(1.02);
 }
 
 .caption {
