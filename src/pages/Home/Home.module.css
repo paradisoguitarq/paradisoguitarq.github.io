@@ -5,6 +5,7 @@
      toolbars are on screen, instead of pushing its own footer out of view. */
   height: 100svh;
   overflow: hidden;
+  --hero-logo-w: min(340px, 80vw);
 }
 
 .hero-image,
@@ -90,15 +91,26 @@
 }
 
 .hero-logo {
-  width: min(340px, 80vw);
+  width: var(--hero-logo-w);
   height: auto;
 }
 
-.hero-tagline {
+/* Everything below the logo, from the logo's bottom edge to the hero's bottom.
+   0.2209 is half the logo's height-to-width ratio (507.209 / 1147.891 / 2), so
+   the logo's centre still lands on the hero's centre. */
+.hero-lower {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: calc(50% + var(--hero-logo-w) * 0.2209);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-tagline {
   margin: var(--space-6) 0 0;
   width: max-content;
   max-width: 90vw;
@@ -169,8 +181,8 @@
 /* Landscape phones: the centred mark and the bottom row would otherwise meet
    in the middle, so both pull in. */
 @media (max-height: 560px) {
-  .hero-logo {
-    width: min(240px, 60vw);
+  .hero {
+    --hero-logo-w: min(240px, 60vw);
   }
 
   .hero-tagline {
@@ -180,6 +192,16 @@
 
   .hero-social {
     bottom: var(--space-5);
+  }
+}
+
+/* On mobile the social row sits midway between the tagline and the hero's
+   bottom edge, however many lines the tagline takes. */
+@media (max-width: 860px) {
+  .hero-social {
+    position: static;
+    transform: none;
+    margin: auto 0;
   }
 }
 

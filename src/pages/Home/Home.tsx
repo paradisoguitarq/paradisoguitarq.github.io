@@ -49,14 +49,16 @@ export default function Home() {
         <div className={styles["hero-scrim-bottom"]} />
         <div className={styles["hero-brand"]}>
           <img src={heroLogo} alt="PGQ, Paradiso Guitar Quartet & Bass" className={styles["hero-logo"]} />
-          <p className={styles["hero-tagline"]}>Tre generazioni di musicisti raccontano il mondo attraverso le corde</p>
         </div>
-        <div className={styles["hero-social"]}>
-          {socialLinks.map(({ label, href, Icon }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles["hero-social-link"]}>
-              <Icon size={24} />
-            </a>
-          ))}
+        <div className={styles["hero-lower"]}>
+          <p className={styles["hero-tagline"]}>Tre generazioni di musicisti raccontano il mondo attraverso le corde</p>
+          <div className={styles["hero-social"]}>
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles["hero-social-link"]}>
+                <Icon size={24} />
+              </a>
+            ))}
+          </div>
         </div>
         <button
           type="button"
