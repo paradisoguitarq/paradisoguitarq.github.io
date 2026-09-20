@@ -13,7 +13,7 @@ export default function Concerti() {
         <SectionHeading eyebrow="In concerto" title="Le date del PGQ" />
         <div className={styles["concert-list"]}>
           {concerts.map((concert) => (
-            <Card key={`${concert.date}-${concert.month}-${concert.title}`} className={styles["concert-card"]}>
+            <Card key={`${concert.date}-${concert.month}-${concert.title}`}>
               <ConcertRow {...concert} />
             </Card>
           ))}

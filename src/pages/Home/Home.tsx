@@ -12,7 +12,7 @@ import FramedImage from "../../components/display/FramedImage";
 import SectionHeading from "../../components/display/SectionHeading";
 import AlbumCover from "../../components/media/AlbumCover";
 import ConcertRow from "../../components/media/ConcertRow";
-import heroBackground from "../../assets/images/background.jpeg";
+import heroBackground from "../../assets/images/hero.jpg";
 import ensemble from "../../assets/images/ensemble.jpg";
 import heroLogo from "../../assets/images/logo-pgq-white.svg";
 
@@ -44,6 +44,7 @@ export default function Home() {
     <>
       <section className={styles.hero}>
         <img src={heroBackground} alt="Il PGQ in concerto" className={styles["hero-image"]} />
+        <img src={heroBackground} alt="" aria-hidden="true" className={styles["hero-image-echo"]} />
         <div className={styles["hero-scrim-center"]} />
         <div className={styles["hero-scrim-bottom"]} />
         <div className={styles["hero-brand"]}>
