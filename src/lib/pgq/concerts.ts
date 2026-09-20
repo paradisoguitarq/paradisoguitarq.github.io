@@ -17,7 +17,17 @@ export const concerts: Concert[] = [
   },
 ];
 
-export const nextConcert: Concert = concerts[0];
+const MONTHS = ["GEN", "FEB", "MAR", "APR", "MAG", "GIU", "LUG", "AGO", "SET", "OTT", "NOV", "DIC"];
+
+/** A concert still counts on the day it takes place, so it expires at the start of the following day. */
+export function getUpcomingConcerts(now: Date = new Date()): Concert[] {
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  return concerts.filter((concert) => {
+    const concertDay = new Date(Number(concert.year), MONTHS.indexOf(concert.month), Number(concert.date));
+    return concertDay >= today;
+  });
+}
 
 export type Concert = {
   date: string;

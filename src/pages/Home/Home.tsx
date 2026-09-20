@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaPlay } from "react-icons/fa";
-import { nextConcert } from "../../lib/pgq/concerts";
+import { getUpcomingConcerts } from "../../lib/pgq/concerts";
 import { album } from "../../lib/pgq/discography";
 import { HERO_SCROLL_HINT_DISMISS_THRESHOLD, useHeroScrollHint } from "../../lib/pgq/hero-scroll-hint";
 import { members } from "../../lib/pgq/members";
@@ -22,6 +22,7 @@ const YOUTUBE_VIDEO_ID = "HHpE6SddOms";
 
 export default function Home() {
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const nextConcert = getUpcomingConcerts()[0];
   const featuredMember = members[0];
   const otherMembers = members.slice(1);
   const { isDismissed: isScrollHintDismissed, dismiss: dismissScrollHint } = useHeroScrollHint();
@@ -173,17 +174,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles["on-warm"]}`}>
-        <div className={styles.container}>
-          <SectionHeading eyebrow="In concerto" title="Prossima data" />
-          <Card className={styles["concert-actions"]}>
-            <ConcertRow {...nextConcert} />
-          </Card>
-          <Button variant="ghost" to="/concerti" className={styles["concert-actions"]}>
-            Tutte le informazioni →
-          </Button>
-        </div>
-      </section>
+      {nextConcert && (
+        <section className={`${styles.section} ${styles["on-warm"]}`}>
+          <div className={styles.container}>
+            <SectionHeading eyebrow="In concerto" title="Prossima data" />
+            <Card className={styles["concert-actions"]}>
+              <ConcertRow {...nextConcert} />
+            </Card>
+            <Button variant="ghost" to="/concerti" className={styles["concert-actions"]}>
+              Tutte le informazioni →
+            </Button>
+          </div>
+        </section>
+      )}
     </>
   );
 }
