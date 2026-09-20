@@ -8,9 +8,11 @@ declare const styles: {
   readonly "hero-brand": string;
   readonly "hero-image": string;
   readonly "hero-image-echo": string;
+  readonly "hero-image-loaded": string;
   readonly "hero-image-pan": string;
   readonly "hero-logo": string;
   readonly "hero-lower": string;
+  readonly "hero-placeholder": string;
   readonly "hero-scrim-bottom": string;
   readonly "hero-scrim-center": string;
   readonly "hero-scroll-hint": string;

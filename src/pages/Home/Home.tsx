@@ -13,6 +13,7 @@ import SectionHeading from "../../components/display/SectionHeading";
 import AlbumCover from "../../components/media/AlbumCover";
 import ConcertRow from "../../components/media/ConcertRow";
 import heroBackground from "../../assets/images/hero.jpg";
+import heroPlaceholder from "../../assets/images/hero-placeholder.jpg";
 import ensemble from "../../assets/images/ensemble.jpg";
 import heroLogo from "../../assets/images/logo-pgq-white.svg";
 
@@ -22,11 +23,19 @@ const YOUTUBE_VIDEO_ID = "HHpE6SddOms";
 
 export default function Home() {
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [heroLoaded, setHeroLoaded] = useState(false);
+  const heroImageRef = useRef<HTMLImageElement>(null);
   const nextConcert = getUpcomingConcerts()[0];
   const featuredMember = members[0];
   const otherMembers = members.slice(1);
   const { isDismissed: isScrollHintDismissed, dismiss: dismissScrollHint } = useHeroScrollHint();
   const ensembleSectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    /* A cached image can finish loading before React attaches onLoad. */
+    if (heroImageRef.current?.complete)
+      setHeroLoaded(true);
+  }, []);
 
   useEffect(() => {
     if (isScrollHintDismissed)
@@ -44,7 +53,14 @@ export default function Home() {
   return (
     <>
       <section className={styles.hero}>
-        <img src={heroBackground} alt="Il PGQ in concerto" className={styles["hero-image"]} />
+        {!heroLoaded && <img src={heroPlaceholder} alt="" aria-hidden="true" className={styles["hero-placeholder"]} />}
+        <img
+          ref={heroImageRef}
+          src={heroBackground}
+          alt="Il PGQ in concerto"
+          className={`${styles["hero-image"]} ${heroLoaded ? styles["hero-image-loaded"] : ""}`}
+          onLoad={() => setHeroLoaded(true)}
+        />
         <img src={heroBackground} alt="" aria-hidden="true" className={styles["hero-image-echo"]} />
         <div className={styles["hero-scrim-center"]} />
         <div className={styles["hero-scrim-bottom"]} />
