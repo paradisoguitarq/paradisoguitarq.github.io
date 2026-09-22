@@ -112,7 +112,7 @@ export default function Home() {
           <div className={styles["video-frame"]}>
             {videoPlaying ? (
               <iframe
-                src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`}
+                src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`}
                 title="Il PGQ dal vivo"
                 className={styles["video-iframe"]}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
