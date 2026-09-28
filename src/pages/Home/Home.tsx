@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaPlay } from "react-icons/fa";
-import { getUpcomingConcerts } from "../../lib/pgq/concerts";
+import { getConcertDateLabels, getUpcomingConcerts } from "../../lib/pgq/concerts";
 import { album } from "../../lib/pgq/discography";
 import { HERO_SCROLL_HINT_DISMISS_THRESHOLD, useHeroScrollHint } from "../../lib/pgq/hero-scroll-hint";
 import { members } from "../../lib/pgq/members";
@@ -26,6 +26,7 @@ export default function Home() {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const heroImageRef = useRef<HTMLImageElement>(null);
   const nextConcert = getUpcomingConcerts()[0];
+  const nextConcertDateLabels = nextConcert && getConcertDateLabels(nextConcert);
   const featuredMember = members[0];
   const otherMembers = members.slice(1);
   const { isDismissed: isScrollHintDismissed, dismiss: dismissScrollHint } = useHeroScrollHint();
@@ -195,7 +196,7 @@ export default function Home() {
           <div className={styles.container}>
             <SectionHeading eyebrow="In concerto" title="Prossima data" />
             <Card className={styles["concert-actions"]}>
-              <ConcertRow {...nextConcert} />
+              <ConcertRow {...nextConcert} {...nextConcertDateLabels} />
             </Card>
             <Button variant="ghost" to="/concerti" className={styles["concert-actions"]}>
               Tutte le informazioni →
